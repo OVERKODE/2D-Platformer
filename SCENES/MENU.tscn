@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://wnp4onlxx1tj"]
+[gd_scene load_steps=2 format=3 uid="uid://wnp4onlxx1tj"]
+
+[ext_resource type="Script" path="res://SCRIPTS/menu.gd" id="1_jkp7g"]
 
 [node name="menu" type="Node2D"]
+script = ExtResource("1_jkp7g")
+
+[node name="panel" type="Panel" parent="."]
+offset_right = 1280.0
+offset_bottom = 768.0
+
+[node name="developers" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 1139.0
+offset_top = 720.0
+offset_right = 1242.0
+offset_bottom = 749.0
+scale = Vector2(1.3, 1.3)
+text = "VAZ1S TEAM"
+
+[node name="Start" type="Button" parent="panel"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 0
+offset_left = 490.0
+offset_top = 450.0
+offset_right = 790.0
+offset_bottom = 600.0
+text = "УРОВНИ
+"
+
+[node name="levels" type="Button" parent="panel"]
+custom_minimum_size = Vector2(300, 150)
+offset_left = 490.0
+offset_top = 195.0
+offset_right = 790.0
+offset_bottom = 345.0
+text = "НАЧАТЬ"
+
+[connection signal="pressed" from="panel/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="panel/levels" to="." method="_on_levels_pressed"]

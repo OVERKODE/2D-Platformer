@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm1qbrii4t58t"]
+
+[ext_resource type="Script" path="res://SCRIPTS/player.gd" id="1_1xtsk"]
+[ext_resource type="PackedScene" path="res://SCENES/player_camera.tscn" id="2_oyal1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ktiqo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wuyxn"]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_1xtsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ktiqo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_wuyxn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -15.0
+offset_right = 10.0
+offset_bottom = 15.0
+
+[node name="player_camera" parent="." instance=ExtResource("2_oyal1")]
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+position = Vector2(0, -15)
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

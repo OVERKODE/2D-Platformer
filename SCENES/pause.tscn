@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dtav7b5c2sle6"]
+
+[node name="pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 200.0
+offset_right = 800.0
+offset_bottom = 562.0
+
+[node name="resume" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 120.0
+offset_right = 240.0
+offset_bottom = 184.0
+text = "ПРОДОЛЖИТЬ"
+
+[node name="pause_l" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 32.0
+offset_right = 192.0
+offset_bottom = 72.0
+scale = Vector2(1.2, 1.2)
+text = "ПАУЗА"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="to_main_menu" type="Button" parent="panel"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 232.0
+offset_right = 280.0
+offset_bottom = 312.0
+scale = Vector2(0.8, 0.8)
+text = "ВЕРНУТЬСЯ В МЕНЮ"

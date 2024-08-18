@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://wnp4onlxx1tj"]
+[gd_scene load_steps=4 format=3 uid="uid://wnp4onlxx1tj"]
 
 [ext_resource type="Script" path="res://SCRIPTS/menu.gd" id="1_jkp7g"]
 [ext_resource type="Texture2D" uid="uid://c0fsum72cs824" path="res://RESOURCES/SPRITES/start.png" id="2_wkj0n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ckwo"]
 
 [node name="menu" type="Node2D"]
 script = ExtResource("1_jkp7g")
@@ -28,5 +30,17 @@ offset_right = 678.0
 offset_bottom = 527.0
 scale = Vector2(1.5, 1.5)
 icon = ExtResource("2_wkj0n")
+
+[node name="name" type="Label" parent="panel"]
+layout_mode = 0
+offset_left = 473.0
+offset_top = 174.0
+offset_right = 561.0
+offset_bottom = 199.0
+scale = Vector2(4, 4)
+text = "НАЗВАНИЕ"
+label_settings = SubResource("LabelSettings_7ckwo")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="panel/Start" to="." method="_on_start_pressed"]

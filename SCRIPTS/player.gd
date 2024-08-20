@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 @export var anim: AnimatedSprite2D
 @export var audio_listener: AudioListener2D
@@ -21,7 +21,19 @@ func movement(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	# Animation
+	if Input.is_action_pressed("move_left"):
+		$AnimatedSprite2D.play("run_left")
+	if Input.is_action_pressed("move_right"):
+		$AnimatedSprite2D.play("run_right")
+	if Input.is_action_just_released("move_left"):
+		$AnimatedSprite2D.play("idle_left")
+	if Input.is_action_just_released("move_right"):
+		$AnimatedSprite2D.play("idle_right")
 	move_and_slide()
 	
 func _physics_process(delta: float) -> void:
 	movement(delta)
+	
+	

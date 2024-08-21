@@ -30,7 +30,7 @@ offset_bottom = 488.0
 [node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
-position = Vector2(168, 20)
+position = Vector2(168, 24)
 shape = SubResource("RectangleShape2D_c50qo")
 
 [connection signal="pressed" from="pause/pause/panel/resume" to="MANAGER" method="_on_resume_pressed"]

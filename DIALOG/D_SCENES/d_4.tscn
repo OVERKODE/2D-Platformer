@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://2bq6fnhvqbne"]
+
+[ext_resource type="Texture2D" uid="uid://bnpjg7hdbdo5w" path="res://DIALOG/dialog_4.png" id="1_3n05g"]
+[ext_resource type="Script" path="res://DIALOG/d_4.gd" id="1_vnsyk"]
+
+[node name="d4" type="ColorRect"]
+custom_minimum_size = Vector2(1280, 768)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="d_4" type="Node" parent="."]
+script = ExtResource("1_vnsyk")
+
+[node name="next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 608.0
+offset_right = 832.0
+offset_bottom = 680.0
+
+[node name="Dialog4" type="Sprite2D" parent="."]
+position = Vector2(640, 600)
+texture = ExtResource("1_3n05g")
+
+[connection signal="pressed" from="next" to="d_4" method="_on_next_pressed"]

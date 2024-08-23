@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci46k0422hlae"]
+[gd_scene load_steps=6 format=3 uid="uid://ci46k0422hlae"]
 
 [ext_resource type="Script" path="res://SCRIPTS/manager.gd" id="1_gxs28"]
 [ext_resource type="PackedScene" uid="uid://bm1qbrii4t58t" path="res://SCENES/player.tscn" id="1_l2woy"]
 [ext_resource type="PackedScene" uid="uid://b4ohqn31bkkji" path="res://SCENES/pause.tscn" id="3_0fhan"]
+[ext_resource type="PackedScene" uid="uid://c23d7fnm4gq3i" path="res://SCENES/portal.tscn" id="4_jib8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c50qo"]
 size = Vector2(336, 40)
@@ -32,6 +33,9 @@ offset_bottom = 488.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
 position = Vector2(168, 24)
 shape = SubResource("RectangleShape2D_c50qo")
+
+[node name="portal" parent="." instance=ExtResource("4_jib8g")]
+position = Vector2(765, 418)
 
 [connection signal="pressed" from="pause/pause/panel/resume" to="MANAGER" method="_on_resume_pressed"]
 [connection signal="pressed" from="pause/pause/panel/to_main_menu" to="MANAGER" method="_on_to_main_menu_pressed"]

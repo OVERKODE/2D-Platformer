@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dap8xqng433rc"]
+[gd_scene load_steps=2 format=3 uid="uid://dap8xqng433rc"]
+
+[ext_resource type="Script" path="res://SCENES/player_camera.gd" id="1_nsyk6"]
 
 [node name="player_camera" type="Camera2D"]
 zoom = Vector2(3, 3)
@@ -6,3 +8,17 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_horizontal_offset = 1.0
 drag_vertical_offset = 1.0
+script = ExtResource("1_nsyk6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

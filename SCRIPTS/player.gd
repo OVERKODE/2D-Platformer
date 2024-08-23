@@ -1,12 +1,17 @@
 extends CharacterBody2D
 
 var player_flip: bool
-const SPEED = 200.0
+var SPEED = 200.0
 const JUMP_VELOCITY = -400.0
 @export var anim: AnimatedSprite2D
 @export var audio_listener: AudioListener2D
 @export var player_audio_stream: AudioStreamPlayer2D
 
+func set_speed(value: float):
+	SPEED = value
+	$AnimatedSprite2D.play("idle_right")
+	set_physics_process(false)
+	
 func movement(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta		
@@ -32,5 +37,3 @@ func movement(delta):
 	
 func _physics_process(delta: float) -> void:
 	movement(delta)
-	
-	

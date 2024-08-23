@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=3 uid="uid://c23d7fnm4gq3i"]
+
+[ext_resource type="SpriteFrames" uid="uid://bwmr642yl7syb" path="res://RESOURCES/SPRITES/portal/portal.tres" id="1_bisuk"]
+[ext_resource type="Script" path="res://SCRIPTS/portal.gd" id="1_kokdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnfhi"]
+size = Vector2(6, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh3cn"]
+size = Vector2(192, 20)
+
+[node name="portal" type="Area2D"]
+self_modulate = Color(0, 1, 0, 1)
+script = ExtResource("1_kokdp")
+portal_color = 1
+
+[node name="scene_switch" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_dnfhi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_bisuk")
+animation = &"null"
+
+[node name="activated_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activated_area"]
+shape = SubResource("RectangleShape2D_kh3cn")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 16
+lifetime = 2.0
+direction = Vector2(6.64, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 16.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+self_modulate = Color(0, 0, 0, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="activated_area" to="." method="_on_activated_area_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

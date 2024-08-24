@@ -46,6 +46,5 @@ func _process(delta: float) -> void:
 	if change_scene == true:
 		set_transpernt()
 
-
 func _on_timer_timeout() -> void:
 	switch_scene.emit()

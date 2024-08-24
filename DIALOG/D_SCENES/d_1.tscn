@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://2bq54p3bf70j"]
+[gd_scene load_steps=4 format=3 uid="uid://2bq54p3bf70j"]
 
 [ext_resource type="Script" path="res://DIALOG/d_1.gd" id="1_toebt"]
 [ext_resource type="Texture2D" uid="uid://bmbm0mil0hmpn" path="res://DIALOG/dialog_1.png" id="1_wxqi7"]
+[ext_resource type="Texture2D" uid="uid://iyj4y5bmklrl" path="res://RESOURCES/cindy_for_catscene.png" id="3_jx85x"]
 
 [node name="d1" type="ColorRect"]
 custom_minimum_size = Vector2(1280, 768)
@@ -13,6 +14,7 @@ color = Color(0, 0, 0, 1)
 script = ExtResource("1_toebt")
 
 [node name="next" type="Button" parent="."]
+layout_mode = 0
 offset_left = 768.0
 offset_top = 608.0
 offset_right = 832.0
@@ -21,5 +23,9 @@ offset_bottom = 680.0
 [node name="Dialog1" type="Sprite2D" parent="."]
 position = Vector2(640, 600)
 texture = ExtResource("1_wxqi7")
+
+[node name="Pixil-frame-0(8)" type="Sprite2D" parent="."]
+position = Vector2(616, 376)
+texture = ExtResource("3_jx85x")
 
 [connection signal="pressed" from="next" to="mngr" method="_on_next_pressed"]

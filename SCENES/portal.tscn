@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c23d7fnm4gq3i"]
+[gd_scene load_steps=5 format=3 uid="uid://cosrtau4imcr2"]
 
 [ext_resource type="SpriteFrames" uid="uid://bwmr642yl7syb" path="res://RESOURCES/SPRITES/portal/portal.tres" id="1_bisuk"]
 [ext_resource type="Script" path="res://SCRIPTS/portal.gd" id="1_kokdp"]

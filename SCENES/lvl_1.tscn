@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dmqyn72xhn3hr"]
+[gd_scene load_steps=7 format=4 uid="uid://dmqyn72xhn3hr"]
 
 [ext_resource type="Script" path="res://SCRIPTS/mngr_lvl_1.gd" id="1_exnay"]
 [ext_resource type="PackedScene" uid="uid://bm1qbrii4t58t" path="res://SCENES/player.tscn" id="1_l2woy"]
 [ext_resource type="PackedScene" uid="uid://b4ohqn31bkkji" path="res://SCENES/pause.tscn" id="3_0fhan"]
+[ext_resource type="PackedScene" uid="uid://ylbgf5y8mk0d" path="res://SCENES/music.tscn" id="4_ejrfm"]
 [ext_resource type="PackedScene" uid="uid://d3r774p5edh5v" path="res://SCENES/level_creater_layer.tscn" id="5_404y4"]
 [ext_resource type="PackedScene" uid="uid://cosrtau4imcr2" path="res://SCENES/portal.tscn" id="6_h24gb"]
 
@@ -30,6 +31,8 @@ offset_bottom = 480.0
 rotation = 1.56987
 
 [node name="player" parent="." instance=ExtResource("1_l2woy")]
+
+[node name="MUSIC" parent="." instance=ExtResource("4_ejrfm")]
 
 [connection signal="pressed" from="pause/pause/panel/resume" to="mngr_lvl1" method="_on_resume_pressed"]
 [connection signal="pressed" from="pause/pause/panel/to_main_menu" to="mngr_lvl1" method="_on_to_main_menu_pressed"]

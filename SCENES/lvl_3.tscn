@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=4 uid="uid://0uetgg53jd5s"]
+[gd_scene load_steps=6 format=4 uid="uid://0uetgg53jd5s"]
 
 [ext_resource type="Script" path="res://SCRIPTS/mngr_lvl_3.gd" id="2_o18oi"]
 [ext_resource type="PackedScene" uid="uid://d3r774p5edh5v" path="res://SCENES/level_creater_layer.tscn" id="3_jkxdm"]
 [ext_resource type="Texture2D" uid="uid://0lve04m0l2sk" path="res://RESOURCES/cyndis_house.png" id="4_cqbkp"]
 [ext_resource type="PackedScene" uid="uid://b4ohqn31bkkji" path="res://SCENES/pause.tscn" id="4_v85bu"]
+[ext_resource type="PackedScene" uid="uid://ylbgf5y8mk0d" path="res://SCENES/music.tscn" id="5_u4y2r"]
 
 [node name="lvl_3" type="Node2D"]
 
@@ -23,6 +24,8 @@ tile_map_data = PackedByteArray("AAAAABgAAgAAAAAAAAABABgAAgABAAAAAAACABgAAgABAAA
 position = Vector2(1110.5, 600.625)
 scale = Vector2(0.582335, 0.725269)
 texture = ExtResource("4_cqbkp")
+
+[node name="MUSIC" parent="." instance=ExtResource("5_u4y2r")]
 
 [connection signal="pressed" from="pause/pause/panel/resume" to="mngr_lvl3" method="_on_resume_pressed"]
 [connection signal="pressed" from="pause/pause/panel/to_main_menu" to="mngr_lvl3" method="_on_to_main_menu_pressed"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dow4xlw8upvjw"]
+
+[ext_resource type="Script" path="res://SCRIPTS/end.gd" id="1_sotop"]
+[ext_resource type="Texture2D" uid="uid://dmlygp7s7y01l" path="res://RESOURCES/SPRITES/other/end.png" id="2_sjqr5"]
+[ext_resource type="PackedScene" uid="uid://ylbgf5y8mk0d" path="res://SCENES/music.tscn" id="3_bloy6"]
+
+[node name="end" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sotop")
+
+[node name="main_menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 474.0
+offset_top = 518.0
+offset_right = 824.0
+offset_bottom = 633.0
+
+[node name="End" type="Sprite2D" parent="."]
+position = Vector2(638, 382)
+texture = ExtResource("2_sjqr5")
+
+[node name="MUSIC" parent="." instance=ExtResource("3_bloy6")]
+
+[connection signal="pressed" from="main_menu" to="." method="_on_main_menu_pressed"]
